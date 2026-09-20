@@ -1,0 +1,78 @@
+/* Quita los márgenes por defecto del navegador */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: sans-serif;
+}
+
+/* La pantalla de intro cubre todo y sirve de referencia */
+.pantalla-intro {
+  position: relative;
+  width: 100vw;       /* 100% del ancho visible */
+  height: 100vh;      /* 100% del alto visible */
+  background-color: black;
+  overflow: hidden;   /* Evita barras de desplazamiento */
+}
+.gif-intro {
+  position: absolute;
+  bottom: 40px;       /* Distancia desde el borde inferior */
+  right: 40px;        /* Distancia desde el borde derecho */
+  width: 200px;       /* Ajusta este tamaño según qué tan grande sea tu GIF */
+  height: auto;
+  width: 450px;       /* Aumentamos el tamaño del GIF (antes estaba en 200) */
+}
+
+
+.cuadro-texto {
+  position: absolute;
+  bottom: 40px;       /* Distancia desde el borde inferior */
+  left: 40px;         /* Distancia desde el borde izquierdo */
+  width: 380px;       /* Ajusta el ancho según tu imagen */
+  height: 180px;      /* Ajusta la altura según tu imagen */
+  
+  /* Aquí ponemos tu imagen de fondo */
+  background-image: url('barra de dialogo.jpg');
+  background-size: 100% 100%;   /* Estira la imagen para cubrir el cuadro */
+  background-repeat: no-repeat;
+  
+  /* Espacio interno para que el texto no toque los bordes del dibujo */
+  padding: 25px;
+  box-sizing: border-box;
+
+  padding: 40px; 
+  box-sizing: border-box; /* Esto es vital para que el padding no deforme el cuadro */
+
+ padding-top: 120px;    /* Aumenta este número para bajar más el texto */
+  padding-left: 45px;   /* Distancia desde la izquierda */
+  padding-right: 40px;  /* Distancia desde la derecha */
+  padding-bottom: 40px; /* Distancia desde abajo */
+  
+  box-sizing: border-box;
+
+  width: 900px;       /* Aumentamos el ancho (antes estaba en 380) */
+  height: 450px;      /* Aumentamos el alto (antes estaba en 180) */
+  padding: 80px;      /* Aumentamos esto para que el texto no se pegue a las líneas de tu imagen */
+}
+
+/* Estilo para las letras que van dentro del cuadro */
+.cuadro-texto p {
+  color: white;       /* Cambia a black si tu cuadro es claro */
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  
+}
+
+
+/* Estilos específicos para el mensaje animado que crearemos con JS */
+#texto-animado {
+  color: white; /* Letras blancas para el fondo negro */
+  font-family: 'Courier New', Courier, monospace; /* Una fuente de máquina de escribir queda genial */
+  font-size: 22px; /* Un tamaño de texto que se lea bien */
+  line-height: 1.5; /* Espaciado entre líneas */
+  margin: 0; /* Quita los márgenes por defecto */
+  
+  /* Este truco de CSS es CLAVE para que el efecto de escritura funcione con saltos de línea */
+  white-space: pre-wrap; 
+}

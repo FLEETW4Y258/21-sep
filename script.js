@@ -9,7 +9,7 @@ const escenas = [
     gif: "hablando 2.gif"
   },
   {
-    mensaje: "\n \n Así que Eunice\n",
+    mensaje: "\n \n Así que -------\n",
     gif: "hablando.gif"
   },
   {

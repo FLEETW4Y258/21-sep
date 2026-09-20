@@ -109,22 +109,24 @@ body {
 /* Regla 2: Para celulares en modo HORIZONTAL (acostados) */
 @media (max-height: 500px) and (orientation: landscape) {
   .cuadro-texto {
-    width: 65%;          /* Toma un poco más de la mitad para no chocar con el GIF */
-    height: 140px;
+    width: 70%;          /* Un poco más ancho para aprovechar el espacio */
+    height: 190px;       /* Hacemos la caja más alta para que quepan tus \n */
     left: 20px;
     bottom: 10px;
     
-    padding-top: 45px;
+    /* Reducimos el padding superior casi a cero, porque tus \n ya empujan el texto hacia abajo */
+    padding-top: 15px;   
     padding-left: 20px;
+    padding-right: 20px;
   }
 
   .gif-intro {
-    width: 130px;        /* Bob Esponja más pequeño para que no tape el texto */
+    width: 120px;        /* Mantenemos a Bob Esponja en un buen tamaño */
     bottom: 10px;
     right: 20px;
   }
 
   #texto-animado {
-    font-size: 14px;
+    font-size: 14px;     
   }
 }

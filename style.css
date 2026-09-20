@@ -76,3 +76,55 @@ body {
   /* Este truco de CSS es CLAVE para que el efecto de escritura funcione con saltos de línea */
   white-space: pre-wrap; 
 }
+
+/* =========================================
+   6. ADAPTACIÓN PARA CELULARES (Responsive)
+   ========================================= */
+
+/* Regla 1: Para celulares en modo VERTICAL (pantallas delgadas) */
+@media (max-width: 768px) {
+  .cuadro-texto {
+    width: 90%;          /* Toma casi todo el ancho de la pantalla */
+    height: 180px;       /* Lo hacemos un poco más bajo */
+    left: 5%;            /* Lo centramos */
+    bottom: 20px;        /* Lo bajamos un poco más */
+    
+    /* Ajustamos el espacio interior para que el texto encaje en este nuevo tamaño */
+    padding-top: 60px;   
+    padding-left: 25px;
+    padding-right: 20px;
+  }
+
+  .gif-intro {
+    width: 150px;        /* Hacemos a Bob Esponja más pequeño */
+    bottom: 20px;
+    right: 10px;
+  }
+
+  #texto-animado {
+    font-size: 16px;     /* Letra un poco más pequeña para que quepa bien */
+  }
+}
+
+/* Regla 2: Para celulares en modo HORIZONTAL (acostados) */
+@media (max-height: 500px) and (orientation: landscape) {
+  .cuadro-texto {
+    width: 65%;          /* Toma un poco más de la mitad para no chocar con el GIF */
+    height: 140px;
+    left: 20px;
+    bottom: 10px;
+    
+    padding-top: 45px;
+    padding-left: 20px;
+  }
+
+  .gif-intro {
+    width: 130px;        /* Bob Esponja más pequeño para que no tape el texto */
+    bottom: 10px;
+    right: 20px;
+  }
+
+  #texto-animado {
+    font-size: 14px;
+  }
+}

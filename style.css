@@ -237,11 +237,15 @@ body {
    ========================================= */
 .gif-carta {
   position: absolute;
-  width: 250px;       /* Tamaño del GIF (ajústalo si los quieres más grandes o chicos) */
+  width: 250px;
   height: auto;
-  z-index: 3;         /* Flotan por encima de la carta */
-  pointer-events: none; /* No interfieren si haces clic */
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Sombra suave para que resalten */
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  
+  /* NUEVO: Activa el turbo (Aceleración por Hardware) */
+  transform: translateZ(0); 
+  will-change: transform, opacity;
 }
 
 /* 1. Izquierdo Superior (Inclinado hacia la izquierda -12°) */

@@ -49,7 +49,12 @@
 
             <video id="video-final" controls playsinline style="display: none;">
                 <source src="video final.mp4" type="video/mp4">
+        
             </video>
+            <!-- 🎬 VIDEO FINAL (Le decimos que NO cargue hasta que sea necesario) 🎬 -->
+    <video id="video-final" controls playsinline preload="none" style="display: none;">
+        <source src="video-final.mp4" type="video/mp4">
+    </video>
         
             <button id="btn-volver-cartas" class="btn-volver" style="display: none;">⬅ Volver</button>
         </div>
@@ -59,9 +64,12 @@
     <!-- ==========================================
          AUDIOS DEL PROYECTO
          ========================================== -->
-    <audio id="sonido-tecleo" src="Asriel Dialogue Sound Effect (Undertale Character Voice Beeps).mp3" loop></audio>
-    <audio id="musica-fondo" src="012. Home (UNDERTALE Soundtrack) - Toby Fox.mp3" loop></audio>
-    <audio id="musica-cartas" src="Floricienta — Flores Amarillas [Letra].mp3" loop></audio>
+    <!-- ==========================================
+         AUDIOS DEL PROYECTO
+         ========================================== -->
+    <audio id="sonido-tecleo" src="Asriel Dialogue Sound Effect (Undertale Character Voice Beeps).mp3" preload="auto"></audio>
+    <audio id="musica-fondo" src="012. Home (UNDERTALE Soundtrack) - Toby Fox.mp3" preload="auto" loop></audio>
+    <audio id="musica-cartas" src="Floricienta — Flores Amarillas [Letra].mp3" preload="none" loop></audio>
 
     <!-- AQUÍ ESTÁ LA CONEXIÓN VITAL CON TU CÓDIGO -->
     <script src="script.js"></script>

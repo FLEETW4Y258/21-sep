@@ -30,7 +30,7 @@ function iniciarEscritura(textoCompleto, elementoTexto) {
       intervalTyping = null; 
       if (sonido) sonido.pause();
     }
-  }, 10); 
+  }, 15); 
 }
 
 window.addEventListener('load', () => {
@@ -148,7 +148,7 @@ window.addEventListener('load', () => {
           if (btnPorUltimo) btnPorUltimo.style.display = 'block';
         }
       }
-    }, 10); 
+    }, 15); 
   }
 
   function cambiarCarta(nuevoIndice) {

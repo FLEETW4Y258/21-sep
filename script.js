@@ -73,23 +73,23 @@ window.addEventListener('load', () => {
   const datosCartas = [
     { 
       fondo: 'carta2.png', 
-      texto: 'Dicen que regalar flores amarillas hoy\nes una promesa de querer ver siempre feliz\na esa persona especial.\n\nQuería asegurarme de que tú también\ntuvieras las tuyas.', 
+      texto: 'Me encantaría poder entregarte un gran ramo\n de flores amarillas en persona \n(créeme que lo haría sin dudarlo),\n pero ya que no es posible, \ntuve que ponerme creativo. \nPreparé este pequeño detalle especialmente para ti,\n para no dejar pasar este día en blanco.',
       clase: 'mover-derecha' 
     },
     { 
       fondo: 'carta4.png', 
-      texto: 'Desde que te conocí, te has convertido\nen una parte fundamental de mi vida.\n\nTe aprecio muchísimo, tanto que hoy más que nunca\nquisiera tener la magia de teletransportarme\npara estar ahí y poder acompañarte.', 
+      texto: 'Dicen que regalar flores amarillas hoy\nes una promesa de querer ver siempre feliz\na esa persona especial.\n\nQuería asegurarme de que tú también\ntuvieras las tuyas.', 
       clase: 'mover-arriba' 
     },
     { 
       fondo: 'carta3.png', 
-      texto: 'Espero que este regalo, aunque sea a la distancia,\nlogre acortar un poquito los kilómetros y te recuerde\nlo mucho que me importas.\n\nDisfruta mucho tu día y nunca olvides\nlo especial y brillante que eres.', 
+      texto: 'Desde que te conocí, te has convertido\nen una parte fundamental de mi vida.\n\nTe aprecio muchísimo, tanto que hoy más que nunca\nquisiera tener la magia de teletransportarme\npara estar ahí y poder acompañarte.', 
       clase: 'mover-arriba' 
     },
     { 
       // AQUI ESTÁ TU CUARTA CARTA (Cambia el texto y verifica el nombre de tu imagen)
       fondo: 'carta1.png', 
-      texto: 'Aquí va el texto final de tu cuarta carta...\n¡Gracias por ser tan especial!', 
+      texto: 'Espero que este regalo, aunque sea a la distancia,\nlogre acortar un poquito los kilómetros y te recuerde\nlo mucho que me importas.\n\nDisfruta mucho tu día y nunca olvides\nlo especial y brillante que eres.', 
       clase: 'mover-arriba' 
     }
   ];

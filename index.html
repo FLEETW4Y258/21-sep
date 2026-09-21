@@ -7,34 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="pantalla-intro">
-  <!-- Tu cuadro de diálogo con la imagen de fondo -->
-  <div class="cuadro-texto">
-    <!-- El texto DEBE estar dentro de este <div>, y le añadimos el ID -->
-    <p id="texto-animado"></p>
+        <img src="saludo.gif" alt="GIF de inicio" width="350" height="400" class="gif-intro" style="display: none;">
 
-    <img src="boton.png" id="boton-flores" alt="Continuar" style="display: none;">
-  </div>
-</div>
+        <div class="cuadro-texto">
+            <p id="texto-animado"></p>
+            <img src="boton.png" id="boton-flores" alt="Continuar" style="display: none;">
+        </div>
+    </div> 
 
-</div> 
 
-  <div class="pantalla-video" style="display: none;">
-    <video autoplay muted loop id="video-fondo">
-      <source src="Gardenia Free Flowers Background Videos, Motion Graphics, No Copyright  _ All Background Videos.mp4" type="video/mp4">
-    </video>
+    <div class="pantalla-video" style="display: none;">
+        <video autoplay muted loop id="video-fondo">
+            <source src="Gardenia Free Flowers Background Videos, Motion Graphics, No Copyright  _ All Background Videos.mp4" type="video/mp4">
+        </video>
 
-    <div class="contenedor-cartas">
-      <h2>Aquí irán tus cartas en el siguiente paso...</h2>
+        <div class="contenedor-cartas" style="position: relative; display: flex; justify-content: center; align-items: center; height: 100vh;">
+            
+            <!-- NUEVO: Botón de retroceder (empieza oculto en la primera carta) -->
+            <button id="btn-anterior-carta" class="boton-navegacion izquierda" style="display: none;">❮</button>
+
+            <!-- La Carta -->
+            <div id="carta-actual" style="opacity: 0;">
+                <p id="texto-carta">Aquí irá el texto de tu primera carta...</p>
+            </div>
+
+            <!-- Botón de avanzar -->
+            <button id="btn-siguiente-carta" class="boton-navegacion derecha">❯</button>
+            
+        </div>
+        </div>
     </div>
-  </div>
 
-<audio id="sonido-tecleo" src="Asriel Dialogue Sound Effect (Undertale Character Voice Beeps).mp3" loop></audio>
-<!-- NUEVO: Tu música de fondo -->
-<audio id="musica-fondo" src="012. Home (UNDERTALE Soundtrack) - Toby Fox.mp3" loop></audio>
 
-  <img src="saludo.gif" alt="GIF de inicio" width="350" height="400" class="gif-intro">
-</div>
-  <script src="script.js"></script>
+    <audio id="sonido-tecleo" src="Asriel Dialogue Sound Effect (Undertale Character Voice Beeps).mp3" loop></audio>
+    <audio id="musica-fondo" src="012. Home (UNDERTALE Soundtrack) - Toby Fox.mp3" loop></audio>
+    <audio id="musica-cartas" src="Floricienta — Flores Amarillas [Letra].mp3" loop></audio>
+
+    <script src="script.js"></script>
 </body>
 </html>

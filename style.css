@@ -136,13 +136,11 @@ body {
    ========================================= */
 #boton-flores {
   position: absolute;
-  top: -20px;       /* Lo sube un poco para que sobresalga de la esquina */
-  right: -20px;     /* Lo mueve a la derecha para que quede en el borde */
-  width: 80px;      /* Ajusta este tamaño según cómo sea tu imagen */
-  cursor: pointer;  /* Cambia el cursor a una manito al pasar por encima */
-  
-  /* Esto le da un efecto de latido constante */
-  animation: latido 1.2s infinite; 
+  bottom: 150px;     /* Lo pega a la parte de abajo de la caja de texto */
+  right: 35px;      /* Lo pega al lado derecho de la caja de texto */
+  width: 80px;      /* Ajusta este número si tu botón START se ve muy grande o pequeño */
+  cursor: pointer;
+  animation: latido 1.2s infinite;
 }
 
 /* El motor de la animación */
@@ -182,4 +180,76 @@ body {
   justify-content: center;
   align-items: center;
   color: white;      
+}
+
+/* =========================================
+   9. ESTILO Y ANIMACIÓN DE LAS CARTAS
+   ========================================= */
+#carta-actual {
+  position: relative;
+  /* --- MEDIDAS NUEVAS MÁS GRANDES --- */
+  width: 95%;          /* Ocupará casi todo el ancho en celulares */
+  max-width: 800px;    /* Crece hasta 800px en PC (antes era solo 500px) */
+  min-height: 90vh;    /* Altura mucho mayor (80% de la pantalla) */
+  
+  background-image: url('carta1.png');
+  background-size: contain;      
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 1s ease-in-out; 
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 40px; /* Un poco más de espacio interno para que el texto respire */
+  box-sizing: border-box;
+}
+#texto-carta {
+  color: #333; /* Un color gris oscuro/negro para simular tinta */
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.5; /* Espacio entre líneas */
+  margin-bottom: 20px;
+}
+
+#btn-siguiente-carta {
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.6); /* Botón semitransparente oscuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* =========================================
+   ESTILO DE LOS BOTONES DE NAVEGACIÓN
+   ========================================= */
+.boton-navegacion {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo oscurecido para que resalte en el video */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10; /* Los mantiene por encima de la carta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.boton-navegacion:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.boton-navegacion.izquierda {
+  left: 20px; /* Pegado al borde izquierdo */
+}
+
+.boton-navegacion.derecha {
+  right: 20px; /* Pegado al borde derecho */
 }

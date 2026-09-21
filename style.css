@@ -274,3 +274,72 @@ body {
   .gif-pos-2 { right: -10px; }
   .gif-pos-3 { bottom: -10px; left: -10px; }
 }
+
+/* =========================================
+   BOTÓN "POR ÚLTIMO" Y VIDEO FINAL
+   ========================================= */
+
+/* Estilo del botón amarillo brillante */
+.btn-por-ultimo {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f7b731;
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 25;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  animation: latido 1.2s infinite;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn-por-ultimo:hover {
+  background-color: #ffd000;
+  transform: translateX(-50%) scale(1.08);
+}
+
+/* Estilo del video final centrado */
+#video-final {
+  position: relative;
+  z-index: 20;
+  max-width: 85%;
+  max-height: 80vh;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  #video-final {
+    width: 95%;
+    max-height: 70vh;
+  }
+}
+
+/* Botón para regresar del video a las cartas */
+.btn-volver {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+  color: white;
+  font-size: 16px;
+  font-family: sans-serif;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 30; /* Siempre por encima del video */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-volver:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
+}

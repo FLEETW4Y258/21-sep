@@ -75,28 +75,24 @@ window.addEventListener('load', () => {
       fondo: 'carta2.png', 
       texto: 'Me encantaría poder entregarte un gran ramo\n de flores amarillas en persona \n(créeme que lo haría sin dudarlo),\n pero ya que no es posible, \ntuve que ponerme creativo. \nPreparé este pequeño detalle especialmente para ti,\n para no dejar pasar este día en blanco.',
       clase: 'mover-derecha',
-      // Cambia estos 3 nombres por tus archivos reales:
       gifs: ['surprised-brawl-stars.gif', 'legend-of-zelda-zelda.gif', 'deltarune-deltarune-ch5.gif']
     },
     { 
       fondo: 'carta4.png', 
       texto: 'Dicen que regalar flores amarillas hoy\nes una promesa de querer ver siempre feliz\na esa persona especial.\n\nQuería asegurarme de que tú también\ntuvieras las tuyas.', 
       clase: 'mover-arriba',
-      // Cambia estos 3 nombres por tus archivos reales:
       gifs: ['yellow-and-blue-yellow-deltarune.gif', 'shiideraii.gif', 'cute-eeveelution-moment.gif']
     },
     { 
       fondo: 'carta3.png', 
       texto: 'Desde que te conocí, te has convertido\nen una parte fundamental de mi vida.\n\nTe aprecio muchísimo, tanto que hoy más que nunca\nquisiera tener la magia de teletransportarme\npara estar ahí y poder acompañarte.', 
       clase: 'mover-arriba',
-      // Cambia estos 3 nombres por tus archivos reales:
       gifs: ['doom-doom-guy.gif', 'amy-rose.gif', 'brawl-stars-lily-and-cordelius.gif']
     },
     { 
       fondo: 'carta1.png', 
       texto: 'Espero que este regalo, aunque sea a la distancia,\nlogre acortar un poquito los kilómetros y te recuerde\nlo mucho que me importas.\n\nDisfruta mucho tu día y nunca olvides\nlo especial y brillante que eres.', 
       clase: 'mover-arriba',
-      // Cambia estos 3 nombres por tus archivos reales:
       gifs: ['rewrite-amy-rewrite-sonic.gif', 'amy-gives-metal-a-flower-flower.gif', 'among-us-among-us-show.gif']
     }
   ];
@@ -116,6 +112,10 @@ window.addEventListener('load', () => {
   const gifDecor1 = document.getElementById('gif-decor-1');
   const gifDecor2 = document.getElementById('gif-decor-2');
   const gifDecor3 = document.getElementById('gif-decor-3');
+
+  // Elementos del gran final
+  const btnPorUltimo = document.getElementById('btn-por-ultimo');
+  const videoFinal = document.getElementById('video-final');
 
   function actualizarGifs(indice) {
     if (datosCartas[indice] && datosCartas[indice].gifs) {
@@ -142,6 +142,11 @@ window.addEventListener('load', () => {
       } else {
         clearInterval(intervalTypingCartas);
         intervalTypingCartas = null;
+
+        // 🌟 Al terminar de escribirse la carta 4, aparece el botón "Por último"
+        if (indiceCarta === datosCartas.length - 1) {
+          if (btnPorUltimo) btnPorUltimo.style.display = 'block';
+        }
       }
     }, 40); 
   }
@@ -150,12 +155,14 @@ window.addEventListener('load', () => {
     if (divCarta) divCarta.style.opacity = '0'; 
     if (intervalTypingCartas) clearInterval(intervalTypingCartas); 
     
+    // Ocultar botón si retrocede
+    if (btnPorUltimo) btnPorUltimo.style.display = 'none';
+
     setTimeout(() => {
       indiceCarta = nuevoIndice;
       if (imgFondo) imgFondo.src = datosCartas[indiceCarta].fondo;
       if (textoCarta) textoCarta.className = datosCartas[indiceCarta].clase;
       
-      // Actualizamos los 3 GIFs con suavidad al cambiar de carta
       actualizarGifs(indiceCarta);
 
       if (divCarta) divCarta.style.opacity = '1'; 
@@ -186,7 +193,6 @@ window.addEventListener('load', () => {
         if (imgFondo) imgFondo.src = datosCartas[0].fondo;
         if (textoCarta) textoCarta.className = datosCartas[0].clase;
         
-        // Colocamos los primeros 3 GIFs de la Carta 1
         actualizarGifs(0);
 
         if (divCarta) divCarta.style.opacity = '1';
@@ -206,6 +212,59 @@ window.addEventListener('load', () => {
   if (btnAnterior) {
     btnAnterior.addEventListener('click', () => {
       if (indiceCarta > 0) cambiarCarta(indiceCarta - 1);
+    });
+  }
+
+  // ==========================================
+  // 🎬 CLIC EN "POR ÚLTIMO": EL GRAN FINAL
+  // ==========================================
+  const btnVolverCartas = document.getElementById('btn-volver-cartas');
+
+  if (btnPorUltimo) {
+    btnPorUltimo.addEventListener('click', () => {
+      // 1. Pausa la música de las cartas
+      const musicaCartas = document.getElementById('musica-cartas');
+      if (musicaCartas) musicaCartas.pause();
+
+      // 2. Oculta la carta (incluyendo los 3 GIFs) y los botones
+      if (divCarta) divCarta.style.display = 'none';
+      if (btnAnterior) btnAnterior.style.display = 'none';
+      if (btnSiguiente) btnSiguiente.style.display = 'none';
+      btnPorUltimo.style.display = 'none';
+
+      // 3. Muestra el video final y el botón de volver
+      if (videoFinal) {
+        videoFinal.style.display = 'block';
+        videoFinal.play().catch(() => console.log("Se requiere interacción para reproducir el video"));
+      }
+      if (btnVolverCartas) {
+        btnVolverCartas.style.display = 'block';
+      }
+    });
+  }
+
+  // ==========================================
+  // 🔙 CLIC EN "VOLVER": REGRESA A LAS CARTAS
+  // ==========================================
+  if (btnVolverCartas) {
+    btnVolverCartas.addEventListener('click', () => {
+      // 1. Pausa y oculta el video
+      if (videoFinal) {
+        videoFinal.pause();
+        videoFinal.style.display = 'none';
+      }
+      
+      // 2. Oculta el botón de volver
+      btnVolverCartas.style.display = 'none';
+
+      // 3. Reaparece la carta 4 y sus botones correspondientes
+      if (divCarta) divCarta.style.display = ''; // Le quita el "none" para que CSS lo acomode normal
+      if (btnAnterior) btnAnterior.style.display = 'flex'; // Vuelve la flecha de la izquierda
+      if (btnPorUltimo) btnPorUltimo.style.display = 'block'; // Vuelve a salir el botón "Por último"
+
+      // 4. Reanuda la música de las cartas
+      const musicaCartas = document.getElementById('musica-cartas');
+      if (musicaCartas) musicaCartas.play().catch(() => {});
     });
   }
 });

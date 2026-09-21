@@ -5,58 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For you someday</title>
     <link rel="stylesheet" href="style.css">
-
-   <!-- Precarga invisible de GIFs para que aparezcan al instante -->
-    <link rel="preload" href="saludo.gif" as="image">
-    <link rel="preload" href="hablando 2.gif" as="image">
-    <link rel="preload" href="hablando.gif" as="image">
-    <link rel="preload" href="timido.gif" as="image">
-
-    <!-- Precarga invisible de Cartas -->
-    <link rel="preload" href="carta1.png" as="image">
-    <link rel="preload" href="carta2.png" as="image">
-    <link rel="preload" href="carta3.png" as="image">
-    <link rel="preload" href="carta4.png" as="image">
 </head>
 <body>
     
-    <div class="pantalla-intro">
-        <img src="saludo.gif" alt="GIF de inicio" width="350" height="400" class="gif-intro" style="display: none;">
+    <!-- ==========================================
+         ESCENARIO 1: LA PANTALLA NEGRA INICIAL
+         ========================================== -->
+    <div id="pantalla-intro" class="pantalla-intro">
+        
+        <img src="saludo.gif" alt="GIF de inicio" class="gif-intro" style="display: none;">
 
         <div class="cuadro-texto">
             <p id="texto-animado"></p>
             <img src="boton.png" id="boton-flores" alt="Continuar" style="display: none;">
         </div>
+
     </div> 
 
-
+    <!-- ==========================================
+         ESCENARIO 2: EL VIDEO Y LAS CARTAS NUEVAS
+         ========================================== -->
     <div class="pantalla-video" style="display: none;">
+        
         <video autoplay muted loop id="video-fondo">
             <source src="Gardenia Free Flowers Background Videos, Motion Graphics, No Copyright  _ All Background Videos.mp4" type="video/mp4">
         </video>
 
-        <div class="contenedor-cartas" style="position: relative; display: flex; justify-content: center; align-items: center; height: 100vh;">
-            
-            <!-- NUEVO: Botón de retroceder (empieza oculto en la primera carta) -->
+        <div class="contenedor-cartas">
             <button id="btn-anterior-carta" class="boton-navegacion izquierda" style="display: none;">❮</button>
 
-            <!-- La Carta -->
+            <!-- CAJA DE LA CARTA INFALIBLE -->
             <div id="carta-actual" style="opacity: 0;">
-                <p id="texto-carta">Aquí irá el texto de tu primera carta...</p>
+                <img id="img-fondo-carta" src="" alt="Fondo Carta" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; z-index: -1;">
+                <p id="texto-carta"></p>
             </div>
 
-            <!-- Botón de avanzar -->
             <button id="btn-siguiente-carta" class="boton-navegacion derecha">❯</button>
-            
         </div>
-        </div>
+
     </div>
 
-
+    <!-- ==========================================
+         AUDIOS DEL PROYECTO
+         ========================================== -->
     <audio id="sonido-tecleo" src="Asriel Dialogue Sound Effect (Undertale Character Voice Beeps).mp3" loop></audio>
     <audio id="musica-fondo" src="012. Home (UNDERTALE Soundtrack) - Toby Fox.mp3" loop></audio>
     <audio id="musica-cartas" src="Floricienta — Flores Amarillas [Letra].mp3" loop></audio>
 
+    <!-- AQUÍ ESTÁ LA CONEXIÓN VITAL CON TU CÓDIGO -->
     <script src="script.js"></script>
 </body>
 </html>

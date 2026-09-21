@@ -231,3 +231,46 @@ body {
 .boton-navegacion.derecha {
   right: 20px; 
 }
+
+/* =========================================
+   GIFS ALREDEDOR DE LAS CARTAS
+   ========================================= */
+.gif-carta {
+  position: absolute;
+  width: 250px;       /* Tamaño del GIF (ajústalo si los quieres más grandes o chicos) */
+  height: auto;
+  z-index: 3;         /* Flotan por encima de la carta */
+  pointer-events: none; /* No interfieren si haces clic */
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Sombra suave para que resalten */
+}
+
+/* 1. Izquierdo Superior (Inclinado hacia la izquierda -12°) */
+.gif-pos-1 {
+  top: 110px;
+  left: -90px;
+  transform: rotate(-12deg);
+}
+
+/* 2. Medio Lado Derecho (Inclinado hacia la derecha 15°) */
+.gif-pos-2 {
+  top: 50%;
+  right: -200px;
+  transform: translateY(-50%) rotate(15deg);
+}
+
+/* 3. Izquierdo Inferior (Inclinado sutilmente -8°) */
+.gif-pos-3 {
+  bottom: 70px;
+  left: -20px;
+  transform: rotate(-8deg);
+}
+
+/* Adaptación para celulares (un poco más pequeños para no salirse de pantalla) */
+@media (max-width: 768px) {
+  .gif-carta {
+    width: 80px;
+  }
+  .gif-pos-1 { top: -10px; left: -10px; }
+  .gif-pos-2 { right: -10px; }
+  .gif-pos-3 { bottom: -10px; left: -10px; }
+}

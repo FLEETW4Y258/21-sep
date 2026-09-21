@@ -68,29 +68,36 @@ window.addEventListener('load', () => {
   }
 
   // ==========================================
-  // ESCENARIO 2: TUS 4 CARTAS
+  // ESCENARIO 2: TUS 4 CARTAS CON SUS 12 GIFS
   // ==========================================
   const datosCartas = [
     { 
       fondo: 'carta2.png', 
       texto: 'Me encantaría poder entregarte un gran ramo\n de flores amarillas en persona \n(créeme que lo haría sin dudarlo),\n pero ya que no es posible, \ntuve que ponerme creativo. \nPreparé este pequeño detalle especialmente para ti,\n para no dejar pasar este día en blanco.',
-      clase: 'mover-derecha' 
+      clase: 'mover-derecha',
+      // Cambia estos 3 nombres por tus archivos reales:
+      gifs: ['surprised-brawl-stars.gif', 'legend-of-zelda-zelda.gif', 'deltarune-deltarune-ch5.gif']
     },
     { 
       fondo: 'carta4.png', 
       texto: 'Dicen que regalar flores amarillas hoy\nes una promesa de querer ver siempre feliz\na esa persona especial.\n\nQuería asegurarme de que tú también\ntuvieras las tuyas.', 
-      clase: 'mover-arriba' 
+      clase: 'mover-arriba',
+      // Cambia estos 3 nombres por tus archivos reales:
+      gifs: ['yellow-and-blue-yellow-deltarune.gif', 'shiideraii.gif', 'cute-eeveelution-moment.gif']
     },
     { 
       fondo: 'carta3.png', 
       texto: 'Desde que te conocí, te has convertido\nen una parte fundamental de mi vida.\n\nTe aprecio muchísimo, tanto que hoy más que nunca\nquisiera tener la magia de teletransportarme\npara estar ahí y poder acompañarte.', 
-      clase: 'mover-arriba' 
+      clase: 'mover-arriba',
+      // Cambia estos 3 nombres por tus archivos reales:
+      gifs: ['doom-doom-guy.gif', 'amy-rose.gif', 'brawl-stars-lily-and-cordelius.gif']
     },
     { 
-      // AQUI ESTÁ TU CUARTA CARTA (Cambia el texto y verifica el nombre de tu imagen)
       fondo: 'carta1.png', 
       texto: 'Espero que este regalo, aunque sea a la distancia,\nlogre acortar un poquito los kilómetros y te recuerde\nlo mucho que me importas.\n\nDisfruta mucho tu día y nunca olvides\nlo especial y brillante que eres.', 
-      clase: 'mover-arriba' 
+      clase: 'mover-arriba',
+      // Cambia estos 3 nombres por tus archivos reales:
+      gifs: ['rewrite-amy-rewrite-sonic.gif', 'amy-gives-metal-a-flower-flower.gif', 'among-us-among-us-show.gif']
     }
   ];
 
@@ -104,6 +111,19 @@ window.addEventListener('load', () => {
   const btnSiguiente = document.getElementById('btn-siguiente-carta');
   const btnAnterior = document.getElementById('btn-anterior-carta');
   const imgFondo = document.getElementById('img-fondo-carta');
+
+  // Elementos de los 3 GIFs decorativos
+  const gifDecor1 = document.getElementById('gif-decor-1');
+  const gifDecor2 = document.getElementById('gif-decor-2');
+  const gifDecor3 = document.getElementById('gif-decor-3');
+
+  function actualizarGifs(indice) {
+    if (datosCartas[indice] && datosCartas[indice].gifs) {
+      if (gifDecor1) gifDecor1.src = datosCartas[indice].gifs[0];
+      if (gifDecor2) gifDecor2.src = datosCartas[indice].gifs[1];
+      if (gifDecor3) gifDecor3.src = datosCartas[indice].gifs[2];
+    }
+  }
 
   if (imgFondo) {
     imgFondo.onerror = () => {
@@ -135,6 +155,9 @@ window.addEventListener('load', () => {
       if (imgFondo) imgFondo.src = datosCartas[indiceCarta].fondo;
       if (textoCarta) textoCarta.className = datosCartas[indiceCarta].clase;
       
+      // Actualizamos los 3 GIFs con suavidad al cambiar de carta
+      actualizarGifs(indiceCarta);
+
       if (divCarta) divCarta.style.opacity = '1'; 
       if (textoCarta) escribirCarta(datosCartas[indiceCarta].texto, textoCarta);
       
@@ -162,6 +185,10 @@ window.addEventListener('load', () => {
       setTimeout(() => {
         if (imgFondo) imgFondo.src = datosCartas[0].fondo;
         if (textoCarta) textoCarta.className = datosCartas[0].clase;
+        
+        // Colocamos los primeros 3 GIFs de la Carta 1
+        actualizarGifs(0);
+
         if (divCarta) divCarta.style.opacity = '1';
         if (btnAnterior) btnAnterior.style.display = 'none';
         

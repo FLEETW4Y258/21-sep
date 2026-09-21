@@ -30,7 +30,7 @@ function iniciarEscritura(textoCompleto, elementoTexto) {
       intervalTyping = null; 
       if (sonido) sonido.pause();
     }
-  }, 40); 
+  }, 10); 
 }
 
 window.addEventListener('load', () => {
@@ -148,7 +148,7 @@ window.addEventListener('load', () => {
           if (btnPorUltimo) btnPorUltimo.style.display = 'block';
         }
       }
-    }, 40); 
+    }, 10); 
   }
 
   function cambiarCarta(nuevoIndice) {
@@ -170,7 +170,7 @@ window.addEventListener('load', () => {
       
       if (btnAnterior) btnAnterior.style.display = (indiceCarta === 0) ? 'none' : 'flex';
       if (btnSiguiente) btnSiguiente.style.display = (indiceCarta === datosCartas.length - 1) ? 'none' : 'flex';
-    }, 1000); 
+    }, 300); 
   }
 
   if (botonFlores) {

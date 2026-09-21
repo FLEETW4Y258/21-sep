@@ -130,3 +130,56 @@ body {
     font-size: 14px;     
   }
 }
+
+/* =========================================
+   7. BOTÓN HACIA LAS FLORES
+   ========================================= */
+#boton-flores {
+  position: absolute;
+  top: -20px;       /* Lo sube un poco para que sobresalga de la esquina */
+  right: -20px;     /* Lo mueve a la derecha para que quede en el borde */
+  width: 80px;      /* Ajusta este tamaño según cómo sea tu imagen */
+  cursor: pointer;  /* Cambia el cursor a una manito al pasar por encima */
+  
+  /* Esto le da un efecto de latido constante */
+  animation: latido 1.2s infinite; 
+}
+
+/* El motor de la animación */
+@keyframes latido {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); } /* Se hace 15% más grande */
+  100% { transform: scale(1); }
+}
+
+/* =========================================
+   8. PANTALLA DEL VIDEO DE FONDO
+   ========================================= */
+.pantalla-video {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Este es el secreto para que el video llene toda la pantalla sin deformarse */
+  z-index: -1;       /* Esto manda el video al fondo de todo */
+}
+
+/* El espacio donde pondremos tus cartas */
+.contenedor-cartas {
+  position: relative;
+  z-index: 1;        /* Esto mantiene las cartas por encima del video */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;      
+}

@@ -78,12 +78,34 @@ window.addEventListener('load', () => {
     else {
       pasoActual++; 
 
+      // Si aún hay escenas por mostrar...
       if (pasoActual < escenas.length) {
         elementoGif.src = escenas[pasoActual].gif;
         iniciarEscritura(escenas[pasoActual].mensaje, elementoTexto);
+        
+        // --- NUEVO: Si llegamos a la ÚLTIMA escena, mostramos el botón ---
+        if (pasoActual === escenas.length - 1) {
+          document.getElementById('boton-flores').style.display = 'block';
+        }
+
       } else {
-        console.log("¡Terminaron los mensajes! En el siguiente paso quitaremos esta pantalla.");
+        console.log("Aquí programaremos la transición a las flores.");
       }
     }
+  });
+
+  // --- LÓGICA DEL BOTÓN PARA CAMBIAR DE PANTALLA ---
+  const botonFlores = document.getElementById('boton-flores');
+  const pantallaVideo = document.querySelector('.pantalla-video');
+
+  botonFlores.addEventListener('click', (evento) => {
+    // Esto evita que el clic en el botón se confunda con un clic normal en la pantalla negra
+    evento.stopPropagation(); 
+    
+    // Ocultamos la Parte 1
+    pantalla.style.display = 'none'; 
+    
+    // Mostramos la Parte 2
+    pantallaVideo.style.display = 'block'; 
   });
 });

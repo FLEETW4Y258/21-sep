@@ -5,11 +5,11 @@ const escenas = [
     gif: "saludo.gif"
   },
   {
-    mensaje: "\n \n Pos weno ya sabes que día es hoy, \nel día de \"🌻las Flores amarillas🌻\" ",
+    mensaje: "\n \n Pos weno ya sabes que día es hoy, \nel día de \"🌻las Flores amarillas🌻\" \nXDXDXDDDDDD ",
     gif: "hablando 2.gif"
   },
   {
-    mensaje: "\n \n Así que -------\n",
+    mensaje: "\n \n Así que mi querida Eunice \nquise hacer esto para ti",
     gif: "hablando.gif"
   },
   {
@@ -95,10 +95,10 @@ window.addEventListener('load', () => {
 
   // --- LÓGICA DE LAS CARTAS (ESCENARIO 2) ---
   const datosCartas = [
-    { fondo: 'carta1.png', texto: 'Este es el texto de tu PRIMERA carta.\nPodemos poner saltos de línea aquí.' },
-    { fondo: 'carta2.png', texto: 'Segunda carta...\nFíjate cómo el fondo cambia suavemente.' },
-    { fondo: 'carta3.png', texto: 'Tercera carta...\n¡Ya casi terminamos la sorpresa!' },
-    { fondo: 'carta4.png', texto: 'Esta es la CUARTA y última carta.\n¡Espero que te haya encantado!' }
+    { fondo: 'carta1.png', texto: 'Me encantaría poder entregarte un gran \n ramo de flores amarillas en persona \n(créeme que lo haría sin dudarlo), \npero ya que no es posible,\n tuve que ponerme creativo. \nPreparé este pequeño detalle especialmente \npara ti, para no dejar pasar este día en blanco.' },
+    { fondo: 'carta2.png', texto: 'Dicen que regalar flores amarillas hoy \nes una promesa de querer ver siempre feliz \na esa persona especial. Quería asegurarme \nde que tú también tuvieras las tuyas,\n porque tu sonrisa es algo que siempre\n vale la pena cuidar.' },
+    { fondo: 'carta3.png', texto: 'Desde que te conocí, te has convertido \nen una parte fundamental de mi vida. \nTe aprecio muchísimo, tanto que hoy más que nunca\n quisiera tener la magia \nde teletransportarme para estar ahí \ny poder acompañarte.' },
+    { fondo: 'carta4.png', texto: 'Espero que este regalo, aunque sea a la distancia,\n logre acortar un poquito los kilómetros y te recuerde\n lo mucho que me importas. Disfruta mucho tu día\n y nunca olvides lo especial y brillante que eres.' }
   ];
 
   let indiceCarta = 0;
